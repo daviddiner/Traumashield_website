@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  
+  --color-cyan: #00cfff;
+  --color-cyan-dim: rgba(0,207,255,0.15);
+  --color-cyan-glow: rgba(0,207,255,0.4);
+  --color-red: #ff3344;
+  --color-bg: #000000;
+  --color-bg2: #050508;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── SCANLINE ── */
+.scanline-overlay {
+  position: fixed; inset: 0; z-index: 9999; pointer-events: none;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.025) 2px, rgba(0,0,0,0.025) 4px);
+  opacity: 0.5;
+}
+
+/* ── NOISE ── */
+.noise {
+  position: absolute; inset: 0; pointer-events: none; z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  mix-blend-mode: overlay;
+}
+
+/* ── GLITCH ── */
+.glitch { position: relative; }
+.glitch::before, .glitch::after {
+  content: attr(data-text);
+  position: absolute; left: 0; top: 0;
+  width: 100%; overflow: hidden;
+}
+.glitch::before {
+  color: rgba(0,207,255,0.2);
+  clip-path: polygon(0 25%, 100% 25%, 100% 45%, 0 45%);
+  transform: translateX(-3px);
+  animation: g1 6s infinite linear;
+}
+.glitch::after {
+  color: rgba(255,51,68,0.2);
+  clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%);
+  transform: translateX(3px);
+  animation: g2 6s infinite linear;
+}
+@keyframes g1 {
+  0%,88%,100%{opacity:0;transform:translateX(-3px) skewX(0)}
+  90%{opacity:1;transform:translateX(-5px) skewX(-3deg)}
+  93%{opacity:0}
+  96%{opacity:1;transform:translateX(2px)}
+  98%{opacity:0}
+}
+@keyframes g2 {
+  0%,85%,100%{opacity:0;transform:translateX(3px) skewX(0)}
+  87%{opacity:1;transform:translateX(5px) skewX(3deg)}
+  90%{opacity:0}
+  94%{opacity:1;transform:translateX(-2px)}
+  97%{opacity:0}
+}
+
+/* ── PULSE DOT ── */
+.pulse-dot {
+  width:8px; height:8px; border-radius:50%; background:var(--color-cyan);
+  animation: pulse 2.2s ease-in-out infinite;
+  flex-shrink:0;
+}
+@keyframes pulse {
+  0%,100%{opacity:1;box-shadow:0 0 0 0 var(--color-cyan-glow)}
+  50%{opacity:0.6;box-shadow:0 0 0 6px transparent}
+}
+
+@keyframes tlPulse {
+  0%,100%{box-shadow:0 0 16px var(--color-cyan-glow)}
+  50%{box-shadow:0 0 32px var(--color-cyan-glow),0 0 60px rgba(0,207,255,0.2)}
+}
+
+@keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+.animate-ticker {
+  animation: ticker 35s linear infinite;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
