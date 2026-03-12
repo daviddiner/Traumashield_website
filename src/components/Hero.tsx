@@ -33,7 +33,7 @@ export function Hero() {
           
           <div className="max-w-[600px] mt-10">
             <p className="text-[18px] md:text-[20px] leading-[1.6] text-white/80 font-light mb-4">
-              TraumaShield combines an innovative medical device with an FDA-approved agent — deployed through its novel second medical use — reaching patients within the critical post-trauma window (0–6 hours) to block fear-memory consolidation and restore healthy contextual memory before PTSD can form.
+              TraumaShield combines an innovative medical device with an FDA-approved agent — deployed through its novel second medical use — reaching patients within the critical post-trauma window to block fear-memory consolidation and restore healthy contextual memory before PTSD can form.
             </p>
             <p className="font-mono text-[12px] tracking-[0.2em] uppercase text-white/50">
               Novel Second Medical Use · Regulatory Pathway Active
@@ -52,16 +52,16 @@ export function Hero() {
           
           <div className="flex flex-wrap items-center gap-6 mt-16 pt-8 border-t border-white/10">
             <div className="flex items-center gap-3 font-mono text-[12px] tracking-[0.15em] uppercase text-white/60">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#4ade80] shrink-0 shadow-[0_0_10px_rgba(74,222,128,0.5)]"></div>FDA-Approved
+              <div className="w-1.5 h-1.5 rounded-full bg-[#4ade80] shrink-0 shadow-[0_0_10px_rgba(74,222,128,0.5)]"></div>In Clinical Validation
             </div>
             <div className="flex items-center gap-3 font-mono text-[12px] tracking-[0.15em] uppercase text-white/60">
-              <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-cyan)] shrink-0 shadow-[0_0_10px_var(--color-cyan-glow)]"></div>2nd Medical Use
+              <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-cyan)] shrink-0 shadow-[0_0_10px_var(--color-cyan-glow)]"></div>Regulatory Speed
             </div>
             <div className="flex items-center gap-3 font-mono text-[12px] tracking-[0.15em] uppercase text-white/60">
               <div className="w-1.5 h-1.5 rounded-full bg-[#60a5fa] shrink-0 shadow-[0_0_10px_rgba(96,165,250,0.5)]"></div>IP Protected
             </div>
             <div className="flex items-center gap-3 font-mono text-[12px] tracking-[0.15em] uppercase text-white/60">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#c084fc] shrink-0 shadow-[0_0_10px_rgba(192,132,252,0.5)]"></div>505(b)(2)
+              <div className="w-1.5 h-1.5 rounded-full bg-[#c084fc] shrink-0 shadow-[0_0_10px_rgba(192,132,252,0.5)]"></div>Munition-Grade Design
             </div>
           </div>
         </motion.div>

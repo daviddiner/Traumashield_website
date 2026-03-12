@@ -32,7 +32,8 @@ export function Navbar() {
         <ul className="hidden md:flex items-center gap-9 list-none">
           <li><a href="#problem" className="text-white/45 text-[13px] font-medium tracking-[0.05em] no-underline hover:text-white transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-[var(--color-cyan)] hover:after:w-full after:transition-all">The Problem</a></li>
           <li><a href="#solution" className="text-white/45 text-[13px] font-medium tracking-[0.05em] no-underline hover:text-white transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-[var(--color-cyan)] hover:after:w-full after:transition-all">Solution</a></li>
-          <li><a href="#science" className="text-white/45 text-[13px] font-medium tracking-[0.05em] no-underline hover:text-white transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-[var(--color-cyan)] hover:after:w-full after:transition-all">Mechanism</a></li>
+          <li><a href="#scientific-validation" className="text-white/45 text-[13px] font-medium tracking-[0.05em] no-underline hover:text-white transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-[var(--color-cyan)] hover:after:w-full after:transition-all">Science</a></li>
+          <li><a href="#market" className="text-white/45 text-[13px] font-medium tracking-[0.05em] no-underline hover:text-white transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-[var(--color-cyan)] hover:after:w-full after:transition-all">Traction</a></li>
           <li><a href="#documents" className="text-white/45 text-[13px] font-medium tracking-[0.05em] no-underline hover:text-white transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-[var(--color-cyan)] hover:after:w-full after:transition-all">Documents</a></li>
           <li><a href="#join" className="text-white/45 text-[13px] font-medium tracking-[0.05em] no-underline hover:text-white transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-[var(--color-cyan)] hover:after:w-full after:transition-all">Join Us</a></li>
         </ul>
@@ -57,7 +58,8 @@ export function Navbar() {
           <ul className="flex flex-col gap-8 list-none mb-12">
             <li><a href="#problem" onClick={closeMenu} className="text-white text-2xl font-display font-bold tracking-tight no-underline">The Problem</a></li>
             <li><a href="#solution" onClick={closeMenu} className="text-white text-2xl font-display font-bold tracking-tight no-underline">Solution</a></li>
-            <li><a href="#science" onClick={closeMenu} className="text-white text-2xl font-display font-bold tracking-tight no-underline">Mechanism</a></li>
+            <li><a href="#scientific-validation" onClick={closeMenu} className="text-white text-2xl font-display font-bold tracking-tight no-underline">Science</a></li>
+            <li><a href="#market" onClick={closeMenu} className="text-white text-2xl font-display font-bold tracking-tight no-underline">Traction</a></li>
             <li><a href="#documents" onClick={closeMenu} className="text-white text-2xl font-display font-bold tracking-tight no-underline">Documents</a></li>
             <li><a href="#join" onClick={closeMenu} className="text-white text-2xl font-display font-bold tracking-tight no-underline">Join Us</a></li>
           </ul>
