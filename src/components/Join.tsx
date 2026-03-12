@@ -31,7 +31,7 @@ export function Join() {
           </h2>
           
           <p className="text-[17px] text-white/50 leading-[1.75] max-w-[580px] mx-auto mb-12 font-light">
-            TraumaShield is raising <strong className="text-[var(--color-cyan)] font-medium">$3M</strong> to execute its Phase 2a clinical trial and complete device engineering. Join us in making trauma a memory, not a disorder.
+            TraumaShield is raising <strong className="text-[var(--color-cyan)] font-medium">$2M</strong> to execute its Phase 2a clinical trial and complete device engineering. Join us in making trauma a memory, not a disorder.
           </p>
           
           <div className="flex justify-center gap-4 flex-wrap mb-10">
