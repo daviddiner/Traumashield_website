@@ -13,9 +13,9 @@ export function Science() {
         >
           <div className="flex items-center gap-3.5 mb-6">
             <div className="w-7 h-px bg-[rgba(0,207,255,0.6)]"></div>
-            <span className="font-mono text-[12px] tracking-[0.25em] uppercase text-[rgba(0,207,255,0.8)]">Peer-Reviewed Evidence</span>
+            <span className="section-subtitle text-[var(--color-cyan)] mb-4 inline-block">Peer-Reviewed Evidence</span>
           </div>
-          <h2 className="font-display text-[clamp(28px,4vw,52px)] font-extrabold max-w-[700px] leading-[1.15] tracking-[-0.02em]">
+          <h2 className="section-title text-white mb-5">
             <span className="text-[var(--color-cyan)]">47% reduction</span> in PTSD incidence.<br/>Validated. Peer-reviewed. Reproducible.
           </h2>
         </motion.div>
@@ -29,7 +29,7 @@ export function Science() {
           >
             <div className="bg-white/[0.025] border border-white/10 p-9 relative">
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[var(--color-cyan)] to-transparent"></div>
-              <div className="font-mono text-[12px] tracking-[0.2em] uppercase text-white/50 mb-8">Human Data — Surgical Trauma Model · 1-Month Follow-Up</div>
+              <div className="font-mono text-[12px] tracking-[0.2em] uppercase text-white/50 mb-8">Human Data - Surgical Trauma Model · 1-Month Follow-Up</div>
               
               <div className="flex items-end gap-5 h-[160px]">
                 <div className="flex-1 flex flex-col items-center gap-3">
@@ -71,7 +71,7 @@ export function Science() {
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[var(--color-cyan)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
                 <div className="font-mono text-[12px] tracking-[0.2em] uppercase text-[rgba(0,207,255,0.6)] mb-2 relative z-10">01 · Mechanism</div>
                 <div className="font-display text-[18px] font-bold mb-2 relative z-10">Fear-Memory Consolidation Window</div>
-                <div className="text-[15px] text-white/70 leading-[1.6] relative z-10">The neuroscientific mechanism explaining why the 0–6 hour window is the only viable prevention point. Memories are consolidated — not formed — in this window, making pharmacological intervention uniquely effective.</div>
+                <div className="text-[15px] text-white/70 leading-[1.6] relative z-10">The neuroscientific mechanism explaining why the 0-6 hour window is the only viable prevention point. Memories are consolidated - not formed - in this window, making pharmacological intervention uniquely effective.</div>
               </div>
               <div className="bg-white/[0.02] border border-white/5 border-l-[2px] border-l-[var(--color-cyan)] p-6 pl-7 transition-all hover:bg-[rgba(0,207,255,0.02)] hover:border-white/10 relative overflow-hidden group">
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[var(--color-cyan)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
@@ -82,7 +82,7 @@ export function Science() {
               <div className="bg-white/[0.02] border border-white/5 border-l-[2px] border-l-[var(--color-cyan)] p-6 pl-7 transition-all hover:bg-[rgba(0,207,255,0.02)] hover:border-white/10 relative overflow-hidden group">
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[var(--color-cyan)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
                 <div className="font-mono text-[12px] tracking-[0.2em] uppercase text-[rgba(0,207,255,0.6)] mb-2 relative z-10">03 · Evidence</div>
-                <div className="font-display text-[18px] font-bold mb-2 relative z-10">Second Medical Use — Clinically Validated</div>
+                <div className="font-display text-[18px] font-bold mb-2 relative z-10">Second Medical Use - Clinically Validated</div>
                 <div className="text-[15px] text-white/70 leading-[1.6] relative z-10">Backed by independent peer-reviewed studies. 47% reduction confirmed in human surgical trauma data. Reproducible across preclinical SEFL animal models.</div>
               </div>
             </div>

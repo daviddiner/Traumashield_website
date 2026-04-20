@@ -26,12 +26,12 @@ export function Join() {
             Qualified Investors Only · Stealth Stage
           </div>
           
-          <h2 className="font-display text-[clamp(40px,7vw,88px)] font-extrabold leading-[1.0] tracking-[-0.03em] mb-5 glitch" data-text="This window won't stay open.">
+          <h2 className="section-title text-white mb-5">
             This window<br/>won't stay open.
           </h2>
           
           <p className="text-[17px] text-white/50 leading-[1.75] max-w-[580px] mx-auto mb-12 font-light">
-            TraumaShield is raising <strong className="text-[var(--color-cyan)] font-medium">$2M</strong> to execute its Phase 2a clinical trial and complete device engineering. Join us in making trauma a memory, not a disorder.
+            TraumaShield is raising <strong className="text-[var(--color-cyan)] font-medium">$2M</strong> to execute its Phase 2 clinical trial and complete device engineering. Join us in making trauma a memory, not a disorder.
           </p>
           
           <div className="flex justify-center gap-4 flex-wrap mb-10">
@@ -66,9 +66,18 @@ export function Join() {
             </motion.div>
           )}
           
-          <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-white/20">
+          <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-white/20 mb-12">
             Pre-Disclosure · Limited Access · Qualified Investors Only
           </p>
+
+          <motion.div 
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+             className="relative w-full max-w-[900px] mx-auto overflow-hidden rounded-2xl border border-[var(--color-cyan)]/20 shadow-[0_0_50px_rgba(0,207,255,0.1)] group mt-10"
+          >
+            <img src="/call-to-action.png" alt="Call to Action" loading="lazy" className="w-full h-auto object-cover relative z-10 transition-transform duration-700 group-hover:scale-[1.02]" referrerPolicy="no-referrer" />
+          </motion.div>
         </motion.div>
       </div>
     </section>

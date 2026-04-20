@@ -5,7 +5,7 @@ export function Validation() {
     <section className="py-32 border-t border-white/10">
       <div className="max-w-screen-2xl mx-auto px-6">
         <div className="mb-24">
-          <h2 className="font-display text-5xl md:text-6xl font-medium tracking-tight mb-8">
+          <h2 className="section-title text-white mb-8">
             Clinical Validation & <br/>
             <span className="text-white/40">Proof of Concept</span>
           </h2>

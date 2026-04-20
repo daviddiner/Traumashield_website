@@ -1,8 +1,26 @@
 import { motion } from 'motion/react';
+import { useState } from 'react';
 
 export function Solution() {
+  const [activeMechImg, setActiveMechImg] = useState('/mechanism-of-action.png');
+  const [hoverMech, setHoverMech] = useState<string | null>(null);
+
   return (
     <section id="solution" className="py-16 md:py-24 px-6 md:px-12 bg-[var(--color-bg)] relative">
+      {/* Fixed Overlays for professional modal illustrations */}
+      <div 
+        className={`fixed inset-0 z-[100] transition-opacity duration-700 flex items-center justify-center p-6 md:p-12 ${hoverMech ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+        onClick={() => setHoverMech(null)}
+      >
+        <div className="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
+        {hoverMech && (
+          <div className="relative z-10 w-full max-w-5xl max-h-[85vh] flex flex-col items-center">
+            <button onClick={() => setHoverMech(null)} className="absolute -top-12 right-0 md:-top-12 md:-right-8 text-white/50 hover:text-white bg-black/50 md:bg-transparent rounded-full p-2 md:p-0 z-50"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+            <img src={`/${hoverMech}.png`} alt="Mechanism Diagram" loading="lazy" className="w-full h-full object-contain shadow-[0_0_100px_rgba(0,207,255,0.2)] rounded-2xl" referrerPolicy="no-referrer" onClick={(e) => e.stopPropagation()} />
+          </div>
+        )}
+      </div>
+
       <div className="max-w-[1200px] mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
@@ -13,14 +31,14 @@ export function Solution() {
         >
           <div className="flex items-center justify-center gap-3.5 mb-6">
             <div className="w-7 h-px bg-[rgba(0,207,255,0.6)]"></div>
-            <span className="font-mono text-[12px] tracking-[0.25em] uppercase text-[rgba(0,207,255,0.8)]">The Solution</span>
+            <span className="section-subtitle text-[var(--color-cyan)] mb-4 inline-block">The Solution</span>
             <div className="w-7 h-px bg-[rgba(0,207,255,0.6)]"></div>
           </div>
-          <h2 className="font-display text-[clamp(36px,5vw,64px)] font-extrabold mb-5 tracking-[-0.02em]">
+          <h2 className="section-title text-white mb-5">
             "The Mental Tourniquet."
           </h2>
-          <p className="max-w-[680px] mx-auto text-white/80 text-[18px] leading-[1.75] font-light">
-            TraumaShield combines an innovative medical device with an FDA-approved agent — reaching patients within the critical 0–6 hour window to block fear-memory consolidation and restore healthy contextual memory before PTSD can form.
+          <p className="section-desc max-w-[680px] mx-auto text-center mb-10">
+            TraumaShield combines an innovative medical device with an FDA-approved agent, reaching patients within the critical 0-6 hour window to block fear-memory consolidation and restore healthy contextual memory before PTSD can form.
           </p>
         </motion.div>
 
@@ -77,7 +95,7 @@ export function Solution() {
           >
             <div className="relative w-full rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group bg-[#050508]">
               <div className="absolute inset-0 bg-[var(--color-cyan)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
-              <img src="/solution-2.png" alt="TraumaShield Solution" className="w-full h-auto object-contain relative z-10 transition-transform duration-700 group-hover:scale-[1.05]" />
+              <img src="/solution-2.png" alt="TraumaShield Solution" loading="lazy" className="w-full h-auto object-contain relative z-10 transition-transform duration-700 group-hover:scale-[1.05]" referrerPolicy="no-referrer" />
               <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-20"></div>
             </div>
           </motion.div>
@@ -120,7 +138,7 @@ export function Solution() {
           >
             <div className="bg-white/[0.025] border border-white/10 rounded-sm p-9 relative overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[var(--color-cyan)] to-transparent"></div>
-              <div className="font-mono text-[12px] tracking-[0.2em] uppercase text-[rgba(0,207,255,0.6)] mb-6">TraumaShield MDI System — Device Architecture</div>
+              <div className="font-mono text-[12px] tracking-[0.2em] uppercase text-[rgba(0,207,255,0.6)] mb-6">TraumaShield MDI System - Device Architecture</div>
               
               <div className="flex items-start gap-3.5 py-3.5 border-b border-white/5">
                 <div className="w-2 h-2 rounded-full mt-1.5 shrink-0 bg-[var(--color-cyan)] shadow-[0_0_8px_var(--color-cyan-glow)]"></div>
@@ -133,21 +151,21 @@ export function Solution() {
                 <div className="w-2 h-2 rounded-full mt-1.5 shrink-0 bg-[#60a5fa] shadow-[0_0_8px_rgba(96,165,250,0.4)]"></div>
                 <div>
                   <div className="font-display text-[15px] font-semibold mb-1">Precision Flow-Limiting Valve</div>
-                  <div className="text-[14px] text-white/70 leading-[1.5]">Controls delivery rate to match respiratory rhythm. Demographically optimized dosing — Child / Adult / Elderly.</div>
+                  <div className="text-[14px] text-white/70 leading-[1.5]">Controls delivery rate to match respiratory rhythm. Demographically optimized dosing - Child / Adult / Elderly.</div>
                 </div>
               </div>
               <div className="flex items-start gap-3.5 py-3.5 border-b border-white/5">
                 <div className="w-2 h-2 rounded-full mt-1.5 shrink-0 bg-[#a78bfa] shadow-[0_0_8px_rgba(167,139,250,0.4)]"></div>
                 <div>
                   <div className="font-display text-[15px] font-semibold mb-1">Integrated Mask</div>
-                  <div className="text-[14px] text-white/70 leading-[1.5]">Ergonomic seal for rapid application. Instant activation — zero setup required.</div>
+                  <div className="text-[14px] text-white/70 leading-[1.5]">Ergonomic seal for rapid application. Instant activation - zero setup required.</div>
                 </div>
               </div>
               <div className="flex items-start gap-3.5 py-3.5">
                 <div className="w-2 h-2 rounded-full mt-1.5 shrink-0 bg-[#4ade80] shadow-[0_0_8px_rgba(74,222,128,0.4)]"></div>
                 <div>
                   <div className="font-display text-[15px] font-semibold mb-1">Payload</div>
-                  <div className="text-[14px] text-white/70 leading-[1.5]">Repurposed FDA-approved agent — known safety profile — prevents fear memory consolidation via dual GABA/NMDA mechanism.</div>
+                  <div className="text-[14px] text-white/70 leading-[1.5]">Repurposed FDA-approved agent - known safety profile - prevents fear memory consolidation via dual GABA/NMDA mechanism.</div>
                 </div>
               </div>
             </div>
@@ -170,48 +188,70 @@ export function Solution() {
               
               <div className="text-center mb-12 relative z-10">
                 <div className="font-mono text-[12px] tracking-[0.2em] uppercase text-[rgba(0,207,255,0.6)] mb-3">Scientific Validation</div>
-                <h3 className="font-display text-[28px] md:text-[36px] font-bold text-white tracking-[-0.02em]">
+                <h2 className="section-title text-white mb-6">
                   Mechanism of Action
-                </h3>
+                </h2>
               </div>
               
-              <div className="relative z-10 w-full max-w-4xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group bg-[#050508] mb-10">
+              <div className="relative z-10 w-full max-w-4xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group bg-[#050508] mb-10 transition-all duration-500 min-h-[300px]">
                 <div className="absolute inset-0 bg-[var(--color-cyan)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
-                <img src="/mechanism-of-action.png" alt="Mechanism of Action" className="w-full h-auto object-contain relative z-10 transition-transform duration-700 group-hover:scale-[1.05]" />
+                <img src={activeMechImg} alt="Mechanism of Action" loading="lazy" className="w-full h-auto object-contain relative z-10 transition-all duration-700 hover:scale-[1.02]" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-20"></div>
               </div>
 
               <div className="relative z-10 w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="flex items-start gap-3 bg-white/[0.02] border border-white/5 p-5 rounded-lg">
+                <div 
+                  className="flex items-start gap-3 bg-white/[0.02] border border-white/5 p-5 rounded-lg transition-all"
+                  onMouseEnter={() => setActiveMechImg('/mechanism-of-action.png')}
+                >
                   <div className="w-2 h-2 rounded-full mt-2 shrink-0 bg-[var(--color-cyan)] shadow-[0_0_8px_var(--color-cyan-glow)]"></div>
                   <p className="text-[15px] text-white/80 leading-[1.6]">
                     <strong className="text-white">Suppress fear learning responses</strong> (by reducing the hyper activity in the Amygdala).
                   </p>
                 </div>
-                <div className="flex items-start gap-3 bg-white/[0.02] border border-white/5 p-5 rounded-lg">
+                <div 
+                  className="flex items-start gap-3 bg-white/[0.02] border border-white/5 p-5 rounded-lg transition-all"
+                  onMouseEnter={() => setActiveMechImg('/mechanism-of-action.png')}
+                >
                   <div className="w-2 h-2 rounded-full mt-2 shrink-0 bg-[var(--color-cyan)] shadow-[0_0_8px_var(--color-cyan-glow)]"></div>
                   <p className="text-[15px] text-white/80 leading-[1.6]">
                     <strong className="text-white">Enhances healthy contextual memory</strong> (by enhancing hippocampal neuroplasticity).
                   </p>
                 </div>
-                <div className="flex items-start gap-3 bg-white/[0.02] border border-white/5 p-5 rounded-lg">
-                  <div className="w-2 h-2 rounded-full mt-2 shrink-0 bg-[var(--color-cyan)] shadow-[0_0_8px_var(--color-cyan-glow)]"></div>
+                <div 
+                  className="flex items-start gap-3 bg-white/[0.02] border border-[rgba(0,207,255,0.2)] p-5 rounded-lg cursor-pointer transition-all duration-300 hover:bg-[rgba(0,207,255,0.1)] hover:border-[rgba(0,207,255,0.5)] hover:shadow-[0_0_20px_rgba(0,207,255,0.2)] group"
+                  onClick={() => { setActiveMechImg('/gaba.png'); setHoverMech('gaba'); }}
+                >
+                  <div className="w-2 h-2 rounded-full mt-2 shrink-0 bg-[var(--color-cyan)] shadow-[0_0_8px_var(--color-cyan-glow)] animate-pulse"></div>
                   <p className="text-[15px] text-white/80 leading-[1.6]">
                     <strong className="text-white">Enhance GABAergic</strong> inhibitory transmission.
+                    <span className="block mt-2 text-[11px] font-mono text-[var(--color-cyan)] uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Click to view model &rarr;</span>
                   </p>
                 </div>
-                <div className="flex items-start gap-3 bg-white/[0.02] border border-white/5 p-5 rounded-lg">
-                  <div className="w-2 h-2 rounded-full mt-2 shrink-0 bg-[var(--color-cyan)] shadow-[0_0_8px_var(--color-cyan-glow)]"></div>
+                <div 
+                  className="flex items-start gap-3 bg-white/[0.02] border border-[rgba(0,207,255,0.2)] p-5 rounded-lg cursor-pointer transition-all duration-300 hover:bg-[rgba(0,207,255,0.1)] hover:border-[rgba(0,207,255,0.5)] hover:shadow-[0_0_20px_rgba(0,207,255,0.2)] group"
+                  onClick={() => { setActiveMechImg('/nmda.png'); setHoverMech('nmda'); }}
+                >
+                  <div className="w-2 h-2 rounded-full mt-2 shrink-0 bg-[var(--color-cyan)] shadow-[0_0_8px_var(--color-cyan-glow)] animate-pulse"></div>
                   <p className="text-[15px] text-white/80 leading-[1.6]">
                     <strong className="text-white">Suppress excitatory NMDA</strong> receptor activity.
+                    <span className="block mt-2 text-[11px] font-mono text-[var(--color-cyan)] uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Click to view model &rarr;</span>
                   </p>
                 </div>
-                <div className="flex items-start gap-3 bg-white/[0.02] border border-white/5 p-5 rounded-lg md:col-span-2">
-                  <div className="w-2 h-2 rounded-full mt-2 shrink-0 bg-[var(--color-cyan)] shadow-[0_0_8px_var(--color-cyan-glow)]"></div>
+                <div 
+                  className="flex items-start gap-3 bg-white/[0.02] border border-[rgba(0,207,255,0.2)] p-5 rounded-lg md:col-span-2 cursor-pointer transition-all duration-300 hover:bg-[rgba(0,207,255,0.1)] hover:border-[rgba(0,207,255,0.5)] hover:shadow-[0_0_20px_rgba(0,207,255,0.2)] group"
+                  onClick={() => { setActiveMechImg('/protection.png'); setHoverMech('protection'); }}
+                >
+                  <div className="w-2 h-2 rounded-full mt-2 shrink-0 bg-[var(--color-cyan)] shadow-[0_0_8px_var(--color-cyan-glow)] animate-pulse"></div>
                   <p className="text-[15px] text-white/80 leading-[1.6]">
                     <strong className="text-white">Modulate neuroprotective pathways</strong> to prevent long-term damage.
+                    <span className="block mt-2 text-[11px] font-mono text-[var(--color-cyan)] uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Click to view model &rarr;</span>
                   </p>
                 </div>
+              </div>
+              
+              <div className="relative z-10 w-full max-w-4xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] mt-10">
+                <img src="/transfer.png" alt="Pathological vs Historical Consolidation" loading="lazy" className="w-full h-auto object-contain relative z-10" referrerPolicy="no-referrer" />
               </div>
             </div>
           </div>

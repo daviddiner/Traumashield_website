@@ -13,25 +13,25 @@ export function Traction() {
         >
           <div className="flex items-center gap-3.5 mb-6">
             <div className="w-7 h-px bg-[rgba(0,207,255,0.6)]"></div>
-            <span className="font-mono text-[11px] tracking-[0.25em] uppercase text-[rgba(0,207,255,0.8)]">Traction & Roadmap</span>
+            <span className="section-subtitle text-[var(--color-cyan)] mb-4 inline-block">Traction & Roadmap</span>
           </div>
-          <h2 className="font-display text-[clamp(28px,4vw,52px)] font-extrabold max-w-[700px] leading-[1.15] tracking-[-0.02em]">
+          <h2 className="section-title text-white mb-5">
             "From concept to clinical. Every milestone de-risks your investment."
           </h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
           {[
-            { title: "Phase 2a Protocol Completed", desc: "PI + pilot centers secured and ready" },
-            { title: "FDA Pre-IND Meeting Completed", desc: "Direct engagement with FDA regulatory pathway" },
+            { title: "Phase 2 Protocol Completed", desc: "PI + pilot centers secured and ready" },
+            { title: "FDA Pre-IND Meeting Package Prepared", desc: "Direct engagement with FDA regulatory pathway" },
             { title: "Israeli Ministry of Health Meeting", desc: "Regulatory relationship established at national level" },
-            { title: "IP Strategy Finalized", desc: "Freedom to Operate confirmed across key markets" },
+            { title: "IP Strategy Finalized", desc: "Patentability research and analysis completed. Patent submitted." },
             { title: "Regulatory Strategy Confirmed", desc: "505(b)(2) + combination-product pathway locked" },
             { title: "World-Class Advisory Board Assembled", desc: "Psychiatry, neuroscience, and regulatory experts" },
             { title: "Independent Clinical Validation", desc: "47% PTSD reduction confirmed by external review" },
             { title: "Full Scientific Package Assembled", desc: "Complete regulatory and clinical documentation ready" },
-            { title: "Economic & Commercial Roadmap", desc: "Detailed path to $3B SOM mapped and validated" },
-            { title: "DDR&D Strategic Relationship", desc: "Defense development & research partnership secured" }
+            { title: "Economic & Commercial Roadmap", desc: "Detailed path to $3B SAM mapped and validated" },
+            { title: "DDR&D Strategic Relationship", desc: "Strategic partnership in progress" }
           ].map((item, i) => (
             <motion.div
               key={i}
@@ -61,7 +61,7 @@ export function Traction() {
         >
           <div className="w-2 h-2 rounded-full bg-[var(--color-cyan)] shrink-0 animate-[pulse_2s_ease-in-out_infinite]"></div>
           <p className="text-[15px] text-white/75 leading-[1.6]">
-            <strong className="text-[var(--color-cyan)]">Next milestone:</strong> Generate real-world evidence with DDR&D, hospitals, and EMS — toward FDA approval.
+            <strong className="text-[var(--color-cyan)]">Next milestone:</strong> Generate real-world evidence with DDR&D, hospitals, and EMS - toward FDA approval.
           </p>
         </motion.div>
       </div>

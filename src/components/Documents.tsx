@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 export function Documents() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showContact, setShowContact] = useState(false);
+  const [hoverDoc, setHoverDoc] = useState<string | null>(null);
 
   const handleRestrictedClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -13,7 +14,12 @@ export function Documents() {
 
   return (
     <section id="documents" className="py-16 md:py-24 px-6 md:px-12 bg-[var(--color-bg)] relative border-t border-white/5">
-      <div className="max-w-[1200px] mx-auto">
+      <div className={`fixed inset-0 z-[100] transition-opacity duration-700 pointer-events-none flex items-center justify-center p-6 md:p-12 ${hoverDoc === 'IP Strategy & FTO' ? 'opacity-100' : 'opacity-0'}`}>
+        <div className="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
+        <img src="/patent.png" alt="Patent Diagram" loading="lazy" className="w-full max-w-5xl h-full max-h-[85vh] object-contain relative z-10 shadow-[0_0_100px_rgba(0,207,255,0.2)] rounded-2xl" referrerPolicy="no-referrer" />
+      </div>
+      
+      <div className="max-w-[1200px] mx-auto relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -23,11 +29,26 @@ export function Documents() {
         >
           <div className="flex items-center gap-3.5 mb-6">
             <div className="w-7 h-px bg-[rgba(0,207,255,0.6)]"></div>
-            <span className="font-mono text-[11px] tracking-[0.25em] uppercase text-[rgba(0,207,255,0.8)]">Investor Materials</span>
+            <span className="section-subtitle text-[var(--color-cyan)] mb-4 inline-block">Investor Materials</span>
           </div>
-          <h2 className="font-display text-[clamp(28px,4vw,52px)] font-extrabold max-w-[700px] leading-[1.15] tracking-[-0.02em]">
+          <h2 className="section-title text-white mb-5">
             Access the full <span className="text-[var(--color-cyan)]">scientific</span> and <span className="text-[var(--color-cyan)]">commercial</span> package.
           </h2>
+        </motion.div>
+
+        <motion.div
+           initial={{ opacity: 0, scale: 0.95 }}
+           whileInView={{ opacity: 1, scale: 1 }}
+           viewport={{ once: true, margin: "-100px" }}
+           transition={{ duration: 0.6 }}
+           className="w-full mb-16 rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] z-10 relative bg-black/50"
+        >
+          <iframe 
+            allowFullScreen={true} 
+            scrolling="no" 
+            className="w-full h-[500px] md:h-[700px] border-0" 
+            src="https://heyzine.com/flip-book/db8fbb62c8.html"
+          ></iframe>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
@@ -77,7 +98,7 @@ export function Documents() {
             <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-[rgba(0,207,255,0.5)] mb-3">Investor Presentation</div>
             <h3 className="font-display text-[24px] font-bold text-white mb-3 group-hover:text-[var(--color-cyan)] transition-colors">Full Pitch Deck 2026</h3>
             <p className="text-[14px] text-white/40 leading-[1.6] mb-8">
-              Comprehensive deep-dive into the neurobiology, regulatory pathway (505(b)(2)), IP strategy, and our Phase 2a clinical trial roadmap.
+              Comprehensive deep-dive into the neurobiology, regulatory pathway (505(b)(2)), IP strategy, and our Phase 2 clinical trial roadmap.
             </p>
             
             <div className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.1em] uppercase text-white/60 group-hover:text-white transition-colors">
@@ -91,7 +112,7 @@ export function Documents() {
             { title: "Strategic Road Map", desc: "Detailed timeline of clinical, regulatory, and commercial milestones through 2028." },
             { title: "Business Plan", desc: "Comprehensive go-to-market strategy, competitive analysis, and operational scaling." },
             { title: "Economic Model", desc: "In-depth financial projections, pricing strategy, and ROI analysis for stakeholders." },
-            { title: "Clinical Protocol - Phase-2a", desc: "Detailed methodology, endpoints, and statistical analysis plan for the upcoming Phase 2a trial." },
+            { title: "Clinical Protocol - Phase-2", desc: "Detailed methodology, endpoints, and statistical analysis plan for the upcoming Phase 2 trial." },
             { title: "IP Strategy & FTO", desc: "Comprehensive overview of patent portfolio, freedom to operate, and exclusivity timelines." },
             { title: "Regulation Strategy", desc: "505(b)(2) pathway documentation, FDA correspondence, and combination product strategy." }
           ].map((doc, i) => (
@@ -99,6 +120,8 @@ export function Documents() {
               key={i}
               href="#"
               onClick={handleRestrictedClick}
+              onMouseEnter={() => setHoverDoc(doc.title)}
+              onMouseLeave={() => setHoverDoc(null)}
               initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
               whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               viewport={{ once: true, margin: "-100px" }}
@@ -151,7 +174,13 @@ export function Documents() {
                     onClick={() => setShowContact(true)}
                     className="flex items-center justify-center gap-3 w-full py-3.5 bg-white/5 text-white border border-white/20 font-display text-[13px] font-bold tracking-[0.1em] uppercase transition-all hover:bg-white/10 hover:border-white/40 rounded-sm"
                   >
-                    <img src="/logo.png" alt="TraumaShield" className="h-5 object-contain mix-blend-screen" onError={(e) => e.currentTarget.style.display = 'none'} />
+                    <img src="/logo.png" alt="TraumaShield Logo" className="h-4 object-contain mix-blend-screen" onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                      e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                    }} />
+                    <div className="hidden font-display font-bold text-sm tracking-[0.08em] uppercase text-white">
+                      Trauma<span className="text-[var(--color-cyan)]">Shield</span>
+                    </div>
                     Contact
                   </button>
                   <button 

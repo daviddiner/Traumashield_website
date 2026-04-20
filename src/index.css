@@ -1,17 +1,81 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "DM Sans", sans-serif;
-  --font-display: "Space Grotesk", sans-serif;
-  --font-mono: "IBM Plex Mono", monospace;
+  /* Enforce single uniform font family globally */
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Inter", sans-serif;
+  --font-mono: "Inter", sans-serif;
   
-  --color-cyan: #00cfff;
-  --color-cyan-dim: rgba(0,207,255,0.15);
-  --color-cyan-glow: rgba(0,207,255,0.4);
-  --color-red: #ff3344;
-  --color-bg: #000000;
-  --color-bg2: #050508;
+  --color-cyan: #00F2FF;
+  --color-cyan-dim: rgba(0, 242, 255, 0.15);
+  --color-cyan-glow: rgba(0, 242, 255, 0.4);
+  --color-red: #FF3344;
+  --color-bg: #050A10;
+  --color-bg2: #080D16;
+}
+
+/* ── TYPOGRAPHY ENFORCEMENT ── */
+@layer utilities {
+  .section-title {
+    font-family: var(--font-sans), sans-serif !important;
+    font-size: clamp(36px, 5vw, 56px) !important;
+    font-weight: 800 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.02em !important;
+    text-transform: none !important;
+  }
+
+  .section-subtitle {
+    font-family: var(--font-sans), sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.25em !important;
+    line-height: 1.5 !important;
+    text-transform: uppercase !important;
+  }
+
+  .section-desc {
+    font-family: var(--font-sans), sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 300 !important;
+    line-height: 1.75 !important;
+    letter-spacing: 0.01em !important;
+  }
+}
+
+@layer base {
+  /* Absolute override for matching categories */
+  
+  /* 1. Global Font Selection */
+  * {
+    font-family: var(--font-sans), sans-serif !important;
+  }
+
+  /* 4. Body Text Identical In Size & Formatting */
+  p, li, .body-text {
+    font-size: 18px !important;
+    font-weight: 300 !important;
+    line-height: 1.75 !important;
+    letter-spacing: 0.01em !important;
+  }
+
+  /* Preserve bold tags within body text when manipulating weight */
+  p strong, p b, li strong, li b {
+    font-weight: 700 !important;
+  }
+}
+
+/* Specific component layer constraints */
+@layer components {
+  /* 5. Legends, labels, captions, UI text follow a consistent small-text style */
+  .text-xs, .text-\[9px\], .text-\[10px\], .text-\[11px\], .text-\[12px\], .text-\[13px\], 
+  legend, label, caption {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.1em !important;
+    line-height: 1.4 !important;
+  }
 }
 
 body {
@@ -45,7 +109,7 @@ body {
   width: 100%; overflow: hidden;
 }
 .glitch::before {
-  color: rgba(0,207,255,0.2);
+  color: rgba(0,242,255,0.2);
   clip-path: polygon(0 25%, 100% 25%, 100% 45%, 0 45%);
   transform: translateX(-3px);
   animation: g1 6s infinite linear;
@@ -84,7 +148,7 @@ body {
 
 @keyframes tlPulse {
   0%,100%{box-shadow:0 0 16px var(--color-cyan-glow)}
-  50%{box-shadow:0 0 32px var(--color-cyan-glow),0 0 60px rgba(0,207,255,0.2)}
+  50%{box-shadow:0 0 32px var(--color-cyan-glow),0 0 60px rgba(0,242,255,0.2)}
 }
 
 @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
@@ -97,4 +161,11 @@ body {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.vital-trace {
+  background: linear-gradient(90deg, transparent 0%, var(--color-cyan) 50%, transparent 100%);
+  background-size: 200% 100%;
+  height: 1px;
+  width: 100%;
 }

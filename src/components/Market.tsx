@@ -13,9 +13,9 @@ export function Market() {
         >
           <div className="flex items-center gap-3.5 mb-6">
             <div className="w-7 h-px bg-[rgba(0,207,255,0.6)]"></div>
-            <span className="font-mono text-[11px] tracking-[0.25em] uppercase text-[rgba(0,207,255,0.8)]">The Business Model</span>
+            <span className="section-subtitle text-[var(--color-cyan)] mb-4 inline-block">The Business Model</span>
           </div>
-          <h2 className="font-display text-[clamp(28px,4vw,52px)] font-extrabold max-w-[700px] leading-[1.15] tracking-[-0.02em]">
+          <h2 className="section-title text-white mb-5">
             A Multi-Billion Dollar Opportunity Driven by Recurring Revenue
           </h2>
         </motion.div>
@@ -29,7 +29,7 @@ export function Market() {
           >
             <div className="bg-white/[0.025] border border-white/10 p-10 relative">
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[var(--color-cyan)] to-transparent"></div>
-              <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-white/30 mb-7">Serviceable Obtainable Market</div>
+              <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-white/30 mb-7">Serviceable Addressable Market</div>
               
               <div className="flex items-baseline gap-3 py-3 border-b border-white/5 font-display">
                 <div className="text-[22px] text-white/20 w-5 shrink-0">&nbsp;</div>
@@ -52,7 +52,7 @@ export function Market() {
                   $3.0B
                 </div>
                 <div className="font-mono text-[11px] tracking-[0.12em] uppercase text-white/30">
-                  Serviceable<br/>Obtainable Market
+                  Serviceable<br/>Addressable Market
                 </div>
               </div>
             </div>
@@ -61,15 +61,8 @@ export function Market() {
               <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-cyan)] shrink-0"></div>
               Recurring Engine: 24-Month Expiry Cycle | ~88.6% Gross Margin
             </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
-            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <div className="flex flex-col gap-4">
+            
+            <div className="flex flex-col gap-4 mt-8">
               <div className="bg-white/[0.02] border border-white/5 p-6 md:p-7 flex items-start gap-5 transition-colors hover:border-[rgba(0,207,255,0.25)]">
                 <div className="font-mono text-[11px] tracking-[0.12em] uppercase text-[var(--color-cyan)] bg-[rgba(0,207,255,0.08)] border border-[rgba(0,207,255,0.2)] px-2.5 py-1 shrink-0 whitespace-nowrap mt-0.5">B2P</div>
                 <div>
@@ -96,6 +89,25 @@ export function Market() {
                   <div className="font-mono text-[11px] tracking-[0.08em] uppercase text-[var(--color-cyan)] mt-1.5">Munition-Grade Pharma</div>
                 </div>
               </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="mb-8 text-[15px] leading-[1.6] text-white/70 font-light space-y-4">
+              <p>
+                TraumaShield operates a B2B/B2G model focused on institutional buyers – EMS agencies, hospital trauma centers, military medical systems, and insurance-funded formularies – who are uniquely positioned to administer the product within the critical early-trauma window.
+              </p>
+              <p>
+                These organizations are also the ones who bear the long‑term financial and operational burden of PTSD, making them highly motivated purchasers. With PTSD generating an estimated $19,630 in annual excess economic burden per patient and direct medical costs of $10,960–$18,750 per year, TraumaShield offers a compelling and quantifiable ROI: even conservative prevention efficacy produces savings that exceed the $300 kit cost.
+              </p>
+              <p>
+                The business model combines consumption-based revenue – every administered kit is immediately replenished at full contract price – with a mandatory 2-year safety-driven replacement cycle, ensuring recurring institutional purchases regardless of usage rates. Buyers adopt TraumaShield because it reduces long-term disability and psychiatric care costs, improves patient outcomes, strengthens military and workforce readiness, and represents one of the most economically attractive preventive interventions available to payers and trauma-care systems.
+              </p>
             </div>
             
             <div className="mt-4 p-5 md:p-6 bg-[rgba(0,207,255,0.04)] border border-[rgba(0,207,255,0.15)]">
